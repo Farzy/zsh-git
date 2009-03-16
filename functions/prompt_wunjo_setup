@@ -84,12 +84,12 @@ prompt_wunjo_setup() {
 	pc[default]='default'
 	pc[date]='cyan'
 	pc[time]='Blue'
-	pc[host]='Green'
+	#pc[host]='Green'
 	pc[user]='cyan'
 	pc[punc]='yellow'
 	pc[line]='magenta'
 	pc[hist]='green'
-	pc[path]='Cyan'
+	#pc[path]='Cyan'
 	pc[shortpath]='default'
 	pc[rc]='red'
 	pc[scm_branch]='Cyan'
@@ -101,6 +101,8 @@ prompt_wunjo_setup() {
 		pc[${cn}]=$(colorword $pc[$cn])
 	done
 	pc[reset]=$(colorword . . 00)
+        pc[host]=$(colorword 'Green' . 'reverse')
+        pc[path]=$(colorword 'Cyan' . 'underline')
 
 	typeset -Ag wunjo_prompt_colors
 	wunjo_prompt_colors=(${(kv)pc})
